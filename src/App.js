@@ -1,3 +1,5 @@
+import utility from './shared/utility';
+
 function App() {
 	return <></>;
 }
