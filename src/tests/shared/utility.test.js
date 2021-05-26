@@ -1,40 +1,41 @@
 import * as utility from '../../shared/utility';
 
 describe('CustomGraph', () => {
+	let graph;
+
+	beforeEach(() => {
+		graph = new utility.CustomGraph();
+		graph.addVertex('a', { content: true });
+		graph.addVertex('b', { content: true });
+		graph.addVertex('c', { content: true });
+		graph.addVertex('d', { content: true });
+		graph.addVertex('e', { content: true });
+		graph.addVertex('f', { content: true });
+
+		graph.addEdge('a', 'b', 4);
+		graph.addEdge('b', 'e', 3);
+		graph.addEdge('e', 'f', 1);
+		graph.addEdge('a', 'c', 2);
+		graph.addEdge('c', 'd', 2);
+		graph.addEdge('c', 'f', 4);
+		graph.addEdge('d', 'e', 3);
+		graph.addEdge('d', 'f', 1);
+
+		// Graph diagram:
+		//
+		//           4
+		//       A ----- B
+		//      /         \
+		//   2 /           \ 3
+		//    /   2     3   \
+		//   C ----- D ----- E
+		//    \      |      /
+		//    4 \   1|    / 1
+		//        \  |  /
+		//           F
+	});
+
 	describe('findtShortestPath', () => {
-		let graph;
-
-		beforeEach(() => {
-			graph = new utility.CustomGraph();
-			graph.addVertex('a', { content: true });
-			graph.addVertex('b', { content: true });
-			graph.addVertex('c', { content: true });
-			graph.addVertex('d', { content: true });
-			graph.addVertex('e', { content: true });
-			graph.addVertex('f', { content: true });
-
-			graph.addEdge('a', 'b', 4);
-			graph.addEdge('b', 'e', 3);
-			graph.addEdge('e', 'f', 1);
-			graph.addEdge('a', 'c', 2);
-			graph.addEdge('c', 'd', 2);
-			graph.addEdge('c', 'f', 4);
-			graph.addEdge('d', 'e', 3);
-			graph.addEdge('d', 'f', 1);
-
-			// Graph diagram:
-			//
-			//           4
-			//       A ----- B
-			//      /         \
-			//   2 /           \ 3
-			//    /   2     3   \
-			//   C ----- D ----- E
-			//    \      |      /
-			//    4 \   1|    / 1
-			//        \  |  /
-			//           F
-		});
 		test('Should return shortest path', () => {
 			expect(graph.findShortestPath('a', 'e')).toStrictEqual([
 				'a',
@@ -43,6 +44,16 @@ describe('CustomGraph', () => {
 				'f',
 				'e',
 			]);
+		});
+	});
+
+	describe('forEachVertices', () => {
+		test('Should be able to set the value for each vertices', () => {
+			graph.forEachVertices((value, vertex) => {
+				graph.setVertex(vertex, { data: 'true' });
+			});
+
+			expect(graph.getVertex('d')).toEqual({ data: 'true' });
 		});
 	});
 });
