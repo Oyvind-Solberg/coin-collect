@@ -5,10 +5,13 @@ import { MinPriorityQueue } from '@datastructures-js/priority-queue';
 
 export class CustomGraph extends Graph {
 	forEachVertices(callback) {
-		return this._vertices.forEach(callback);
+		this._vertices.forEach(callback);
 	}
 	getVertex(vertex) {
 		return this._vertices.get(vertex);
+	}
+	setVertex(vertex, value) {
+		return this._vertices.set(vertex, value);
 	}
 	vertexHasEdges(vertex) {
 		const edges = this._edges.get(vertex);
