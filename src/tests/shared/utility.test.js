@@ -5,45 +5,39 @@ describe('CustomGraph', () => {
 
 	beforeEach(() => {
 		graph = new utility.CustomGraph();
-		graph.addVertex('a', { content: true });
-		graph.addVertex('b', { content: true });
-		graph.addVertex('c', { content: true });
-		graph.addVertex('d', { content: true });
-		graph.addVertex('e', { content: true });
-		graph.addVertex('f', { content: true });
+		graph.addVertex(0, { content: true });
+		graph.addVertex(1, { content: true });
+		graph.addVertex(2, { content: true });
+		graph.addVertex(3, { content: true });
+		graph.addVertex(4, { content: true });
+		graph.addVertex(5, { content: true });
 
-		graph.addEdge('a', 'b', 4);
-		graph.addEdge('b', 'e', 3);
-		graph.addEdge('e', 'f', 1);
-		graph.addEdge('a', 'c', 2);
-		graph.addEdge('c', 'd', 2);
-		graph.addEdge('c', 'f', 4);
-		graph.addEdge('d', 'e', 3);
-		graph.addEdge('d', 'f', 1);
+		graph.addEdge(0, 1, 4);
+		graph.addEdge(1, 4, 3);
+		graph.addEdge(4, 5, 1);
+		graph.addEdge(0, 2, 2);
+		graph.addEdge(2, 3, 2);
+		graph.addEdge(2, 5, 4);
+		graph.addEdge(3, 4, 3);
+		graph.addEdge(3, 5, 1);
 
 		// Graph diagram:
 		//
 		//           4
-		//       A ----- B
+		//       0 ----- 1
 		//      /         \
 		//   2 /           \ 3
 		//    /   2     3   \
-		//   C ----- D ----- E
+		//   2 ----- 3 ----- 4
 		//    \      |      /
 		//    4 \   1|    / 1
 		//        \  |  /
-		//           F
+		//           5
 	});
 
-	describe('findtShortestPath', () => {
+	describe('findShortestPath', () => {
 		test('Should return shortest path', () => {
-			expect(graph.findShortestPath('a', 'e')).toStrictEqual([
-				'a',
-				'c',
-				'd',
-				'f',
-				'e',
-			]);
+			expect(graph.findShortestPath(0, 4)).toStrictEqual([0, 2, 3, 5, 4]);
 		});
 	});
 
@@ -53,7 +47,7 @@ describe('CustomGraph', () => {
 				graph.setVertex(vertex, { data: 'true' });
 			});
 
-			expect(graph.getVertex('d')).toEqual({ data: 'true' });
+			expect(graph.getVertex(4)).toEqual({ data: 'true' });
 		});
 	});
 });
