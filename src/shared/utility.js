@@ -65,7 +65,7 @@ export class CustomGraph extends Graph {
 					// build up path to return at end
 					let currentVertex = endVertex;
 
-					while (currentVertex) {
+					while (currentVertex !== null && currentVertex !== undefined) {
 						shortestPath.push(currentVertex);
 						currentVertex = previous[currentVertex];
 					}
@@ -75,7 +75,11 @@ export class CustomGraph extends Graph {
 					return shortestPath;
 				}
 
-				if (smallestVertex && distances[smallestVertex] !== Infinity) {
+				if (
+					smallestVertex !== null &&
+					smallestVertex !== undefined &&
+					distances[smallestVertex] !== Infinity
+				) {
 					this._edges
 						.get(smallestVertex)
 						.forEach((neighborDistance, neighbor) => {
