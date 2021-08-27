@@ -3,9 +3,12 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
 	container: {
-		height: '150px',
+		height: '60px',
 		width: '100%',
 		margin: 'auto',
+		[theme.breakpoints.up('sm')]: {
+			height: '150px',
+		},
 	},
 }));
 

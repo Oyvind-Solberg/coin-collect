@@ -16,11 +16,15 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 const useStyles = makeStyles((theme) => ({
 	container: {
-		padding: '1rem 0 4rem 0',
+		display: 'flex',
+		flexDirection: 'column',
+		justifyContent: 'space-between',
+		padding: '0.2rem 0 0 0',
 		height: '100vh',
 		width: '100vw',
-
-		// backgroundColor: 'lightBlue',
+		[theme.breakpoints.up('sm')]: {
+			padding: '1rem 0 4rem 0',
+		},
 	},
 	gameWindow: {
 		width: '90vw',

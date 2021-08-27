@@ -34,31 +34,33 @@ const useStyles = makeStyles((theme) => ({
 		backgroundImage: `url(${coinImage})`,
 		width: '30%',
 		height: '30%',
-		zIndex: '3',
+		zIndex: '4',
+		filter: 'drop-shadow(-5px 15px 10px rgba(0, 0, 0, 0.8))',
+		// backgroundColor: theme.palette.secondary.main,
 	},
 	AIPlayer: {
 		backgroundImage: `url(${AIPlayerImage})`,
-		width: '80%',
-		height: '80%',
-		zIndex: '4',
+		zIndex: '5',
 	},
 	humanPlayer: {
 		backgroundImage: `url(${humanPlayerImage})`,
-		width: '80%',
-		height: '80%',
-		zIndex: '2',
+		zIndex: '3',
 	},
 	grass: {
 		backgroundImage: `url(${grassImage})`,
 		zIndex: '1',
+		// backgroundColor: theme.palette.primary.main,
 	},
 	dirt: {
 		backgroundImage: `url(${dirtImage})`,
 		zIndex: '1',
+		// backgroundColor: theme.palette.primary.light,
 	},
 	wall: {
 		backgroundImage: `url(${wallImage})`,
-		zIndex: '1',
+		zIndex: '2',
+		boxShadow: '-5px 5px 10px rgba(0, 0, 0, 0.8)',
+		// backgroundColor: theme.palette.tertiary.main,
 	},
 }));
 

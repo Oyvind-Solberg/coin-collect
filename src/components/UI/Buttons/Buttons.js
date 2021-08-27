@@ -15,6 +15,9 @@ const useStyles = makeStyles((theme) => ({
 	button: {
 		// margin: theme.spacing(1),
 		borderRadius: '20px',
+		[theme.breakpoints.down('xs')]: {
+			height: '1.5rem',
+		},
 	},
 }));
 
@@ -35,13 +38,13 @@ function Buttons(props) {
 				>
 					New game
 				</Button>
-				<Button
+				{/* <Button
 					className={classes.button}
 					onClick={() => props.openModal('HighScore')}
 					startIcon={<ScoreIcon />}
 				>
 					High score
-				</Button>
+				</Button> */}
 			</ButtonGroup>
 
 			<ButtonGroup
@@ -49,9 +52,9 @@ function Buttons(props) {
 				variant="contained"
 				color="primary"
 			>
-				<Button className={classes.button} aria-label="Toggle sound">
+				{/* <Button className={classes.button} aria-label="Toggle sound">
 					<VolumeUpIcon />
-				</Button>
+				</Button> */}
 				<Button
 					className={classes.button}
 					onClick={() => props.openModal('Instructions')}

@@ -5,7 +5,7 @@ function GameSummary(props) {
 		return (
 			<>
 				<Typography align="center" gutterBottom variant="h2">
-					Congratulation! You won the game!
+					You won the game!
 				</Typography>
 				<Typography align="center" paragraph>
 					{props.user.name} got {props.user.score} points!
@@ -16,7 +16,7 @@ function GameSummary(props) {
 		return (
 			<>
 				<Typography align="center" gutterBottom variant="h2">
-					I'm sorry! You lost the game!
+					You lost the game!
 				</Typography>
 				<Typography align="center" paragraph>
 					{props.user.name} got {props.user.score} points!
