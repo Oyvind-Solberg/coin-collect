@@ -1,0 +1,17 @@
+.primary {
+	light: #76a04a;
+	main: #4e7029;
+	dark: #263b10;
+}
+
+.condary {
+	light: #ffff81;
+	main: #ffd54f;
+	dark: #c8a415;
+}
+
+.tertiary {
+	light: #ebdac2;
+	main: #ceb48d;
+	dark: #a18965;
+}
