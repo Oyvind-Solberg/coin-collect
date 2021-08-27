@@ -8,5 +8,5 @@ This site is published at: https://coin-collect-8215e.web.app/
 
 ## About the project
 
-The website is a `single-page application` written in `React` on the frontend and deployed and hosted with `Firebase`.
+This webapp is a `single-page application` written in `React` on the frontend and deployed and hosted with `Firebase`.
 The game mechanics was writen in JavaScript.
