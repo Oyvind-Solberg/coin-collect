@@ -32,6 +32,12 @@ const useStyles = makeStyles((theme) => ({
 		'&:focus': {
 			backgroundColor: theme.palette.primary.light,
 		},
+		'&:active': {
+			backgroundColor: theme.palette.primary.light,
+		},
+		'&:hover': {
+			backgroundColor: theme.palette.primary.light,
+		},
 	},
 	arrowUp: {
 		top: '0',
