@@ -93,7 +93,9 @@ function View(props) {
 						size={props.worldSize}
 						boardSize={boardSize}
 					/>
-				) : null}
+				) : (
+					<div style={{ width: boardSize, height: boardSize }}></div>
+				)}
 			</div>
 			{isDesktop ? null : (
 				<PlayerControlls moveHumanPlayer={props.moveHumanPlayer} />
